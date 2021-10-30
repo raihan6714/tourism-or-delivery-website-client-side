@@ -12,30 +12,60 @@ import Footer from './components/Shared/Footer/Footer';
 import Login from './components/Shared/Login/Login';
 import NotFound from './components/Shared/NotFound/NotFound';
 import AuthProvider from './contexts/AuthProvider';
+import RoomDetails from './components/Home/RoomDetails/RoomDetails';
+// import Booking from './components/Booking/Booking';
+import Dashboard from './components/Dashboard/Dashboard';
+import AddServices from './components/Dashboard/AddServices/AddServices';
+import ManageOrders from './components/Dashboard/ManageOrders/ManageOrders';
+import MyOrders from './components/Dashboard/MyOrders/MyOrders';
 
 function App() {
   return (
     <>
       <AuthProvider>
         <Router>
-          {/* navlink route*/}
+          {/* navlink*/}
           <Header></Header>
           <Switch>
-            {/* home route */}
+            {/* home*/}
             <Route exact path="/">
               <Home></Home>
             </Route>
             <Route path="/home">
               <Home></Home>
             </Route>
-            {/* login route */}
+            {/* login */}
             <Route path="/login">
               <Login></Login>
             </Route>
-            {/* notfound route */}
+            {/* dashboard */}
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
+            </Route>
+            {/* room details */}
+            <Route path="/serviceDetails/:id">
+              <RoomDetails></RoomDetails>
+            </Route>
+            {/* add new service */}
+            <Route path="/addnew">
+              <AddServices></AddServices>
+            </Route>
+            {/* mnage order */}
+            <Route path="/mnageorder">
+              <ManageOrders></ManageOrders>
+            </Route>
+            {/* my order */}
+            <Route path="/myorder">
+              <MyOrders></MyOrders>
+            </Route>
+            {/* <PrivateRoute to="/booking/:id">
+              <Booking></Booking>
+            </PrivateRoute> */}
+            {/* notfound */}
             <Route exact path="*">
               <NotFound></NotFound>
             </Route>
+            {/* booking */}
           </Switch>
           <Footer></Footer>
         </Router>

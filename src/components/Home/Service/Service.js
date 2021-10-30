@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Services.css';
 const Service = () => {
     return (
@@ -10,7 +11,7 @@ const Service = () => {
                             <div className="our_service_first">
                                 <h3>our services</h3>
                                 <p>quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.</p>
-                                <a className="all_s_btn" href="#">view all services</a>
+                                <Link className="all_s_btn" href="/">view all services</Link>
                             </div>
                         </div>
                         <div className="col-md-3 col-sm-6">

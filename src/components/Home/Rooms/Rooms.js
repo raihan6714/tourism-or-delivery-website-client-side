@@ -1,7 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Spinner } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
+import Room from './Room/Room';
 import './Rooms.css';
 const Rooms = () => {
+    const { isLoading } = useAuth();
+    const [services, setServices] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/services')
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+                setServices(data)
+            });
+    }, [])
+    if (isLoading) {
+        return <div className="text-center">
+            <Spinner animation="border" variant="warning" />
+        </div>
+    };
     return (
         <div className="section">
             <div className="container">
@@ -17,50 +35,13 @@ const Rooms = () => {
             </div>
             <div className="container my-4 ">
                 <div className="row row-cols-1 row-cols-md-3 g-4">
-                    <div className="col">
-                        <div className="card">
-                            <img src="http://designarc.biz/demos/hilltown/theme/img/room/room-details.jpg" className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">BUDGET ROOM</h5>
-                                <h6>10x15 Mountain view 2 Balcony</h6>
-                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p>
-                                <div className="d-flex justify-content-between">
-                                    <h4>$170 / Night</h4>
-                                    <Link to="/allservices">
-                                        <button type="button" className="btn btn-outline-warning">Warning</button>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="card">
-                            <img src="http://designarc.biz/demos/hilltown/theme/img/room/room-details.jpg" className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">BUDGET ROOM</h5>
-                                <h6>10x15 Mountain view 2 Balcony</h6>
-                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p>
-                                <div className="d-flex justify-content-between">
-                                    <h4>$170 / Night</h4>
-                                    <div className="btn btn-warning">BOOK NOW</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="card">
-                            <img src="http://designarc.biz/demos/hilltown/theme/img/room/room-details.jpg" className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">BUDGET ROOM</h5>
-                                <h6>10x15 Mountain view 2 Balcony</h6>
-                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p>
-                                <div className="d-flex justify-content-between">
-                                    <h4>$170 / Night</h4>
-                                    <div className="btn btn-warning">BOOK NOW</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {
+                        services.map(service => <Room
+                            key={service._id}
+                            service={service}
+                        >
+                        </Room>)
+                    }
                 </div>
             </div>
         </div>

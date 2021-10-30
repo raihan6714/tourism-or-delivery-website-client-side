@@ -14,7 +14,7 @@ const Header = () => {
                 <Container className="header-nav">
                     <NavLink to="/" className="me-4">
                         <img
-                            src="http://designarc.biz/demos/hilltown/theme/img/logo.png"
+                            src="https://i.ibb.co/v3NmKHr/logo-1.png"
                             width="200"
                             height="30"
                             className="d-inline-block align-top"
@@ -25,10 +25,14 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <NavLink className="me-2 text-decoration-none" to="/home">HOME</NavLink>
-                            <NavLink className="me-2 text-decoration-none" to="/room">ROOMS</NavLink>
                             <NavLink className="me-2 text-decoration-none" to="/services">SERVICES</NavLink>
                             <NavLink className="me-2 text-decoration-none" to="/about">ABOUT US</NavLink>
                             <NavLink className="me-2 text-decoration-none" to="/contact">CONTACT US</NavLink>
+                            {
+                                users.email ? <NavLink className="me-2 text-decoration-none" to="/dashboard">DASHBOARD</NavLink>
+                                    :
+                                    <div></div>
+                            }
                         </Nav>
                         <Nav>
                             {

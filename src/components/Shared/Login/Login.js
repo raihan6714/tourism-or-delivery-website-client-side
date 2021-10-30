@@ -1,9 +1,14 @@
 import React from 'react';
 import useAuth from '../../../hooks/useAuth';
 import './Login.css';
+import { Spinner } from 'react-bootstrap';
 const Login = () => {
-    const { SignInWithGoogle } = useAuth();
-
+    const { SignInWithGoogle, isLoading } = useAuth();
+    if (isLoading) {
+        return <div className="text-center">
+            <Spinner animation="border" variant="warning" />
+        </div>
+    }
 
     return (
         <div className="section bg-secondary pb-5">

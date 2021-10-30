@@ -1,0 +1,10 @@
+.add-register form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 200px;
+}
+.add-register form input{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
