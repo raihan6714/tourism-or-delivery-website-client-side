@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import './Rooms.css';
 const Rooms = () => {
     return (
         <div className="section">
@@ -25,7 +26,9 @@ const Rooms = () => {
                                 <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p>
                                 <div className="d-flex justify-content-between">
                                     <h4>$170 / Night</h4>
-                                    <div className="btn btn-warning">BOOK NOW</div>
+                                    <Link to="/allservices">
+                                        <button type="button" className="btn btn-outline-warning">Warning</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

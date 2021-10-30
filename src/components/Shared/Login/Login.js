@@ -1,8 +1,8 @@
 import React from 'react';
-import useFirebase from '../../../hooks/useFirebae';
+import useAuth from '../../../hooks/useAuth';
 import './Login.css';
 const Login = () => {
-    const { SignInWithGoogle } = useFirebase();
+    const { SignInWithGoogle } = useAuth();
 
 
     return (

@@ -3,10 +3,10 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button'
 import './Header.css';
-import useFirebase from '../../../hooks/useFirebae';
+import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
-    const { users, logOut } = useFirebase();
+    const { users, logOut } = useAuth();
     const { displayName, photoURL } = users;
     return (
         <div>

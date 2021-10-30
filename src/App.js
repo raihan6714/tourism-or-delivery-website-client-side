@@ -11,34 +11,36 @@ import Home from './components/Home/Home';
 import Footer from './components/Shared/Footer/Footer';
 import Login from './components/Shared/Login/Login';
 import NotFound from './components/Shared/NotFound/NotFound';
+import AuthProvider from './contexts/AuthProvider';
 
 function App() {
   return (
-    <div className="">
-      <Router>
-        {/* navlink route*/}
-        <Header></Header>
-        <Switch>
-          {/* home route */}
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          {/* login route */}
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          {/* notfound route */}
-          <Route exact path="*">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
-
-    </div>
+    <>
+      <AuthProvider>
+        <Router>
+          {/* navlink route*/}
+          <Header></Header>
+          <Switch>
+            {/* home route */}
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            {/* login route */}
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            {/* notfound route */}
+            <Route exact path="*">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
+    </>
   );
 }
 
