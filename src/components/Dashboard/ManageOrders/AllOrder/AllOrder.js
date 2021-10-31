@@ -15,7 +15,7 @@ const AllOrder = (props) => {
         </div>
     };
     const handleDelete = id => {
-        const url = `https://aqueous-cliffs-30847.herokuapp.com/${id}`;
+        const url = `https://aqueous-cliffs-30847.herokuapp.com/deleteOrder/${id}`;
         fetch(url, {
             method: "DELETE"
         })
@@ -39,7 +39,7 @@ const AllOrder = (props) => {
             <td>
                 <td>
                     <button className="btn btn-warning me-4">Edit</button>
-                    <Link to="/manageOrders">
+                    <Link to="/">
                         <button onClick={() => handleDelete(_id)} className="btn btn-danger">Delete</button>
                     </Link>
 
