@@ -13,13 +13,14 @@ import Login from './components/Shared/Login/Login';
 import NotFound from './components/Shared/NotFound/NotFound';
 import AuthProvider from './contexts/AuthProvider';
 import RoomDetails from './components/Home/RoomDetails/RoomDetails';
-// import Booking from './components/Booking/Booking';
+import Booking from './components/Booking/Booking';
 import Dashboard from './components/Dashboard/Dashboard';
 import AddServices from './components/Dashboard/AddServices/AddServices';
 import ManageOrders from './components/Dashboard/ManageOrders/ManageOrders';
 import MyOrders from './components/Dashboard/MyOrders/MyOrders';
 import AboutUs from './components/Home/AboutUs/AboutUs';
 import ContuctUs from './components/Home/ContuctUs/ContuctUs';
+import AllServices from './components/Home/AllServices/AllServices';
 
 function App() {
   return (
@@ -44,17 +45,17 @@ function App() {
             <Route path="/contact">
               <ContuctUs></ContuctUs>
             </Route>
+            {/* all services */}
+            <Route path="/allServices">
+              <AllServices></AllServices>
+            </Route>
             {/* login */}
             <Route path="/login">
               <Login></Login>
             </Route>
-            {/* dashboard */}
-            <Route path="/dashboard">
-              <Dashboard></Dashboard>
-            </Route>
-            {/* room details */}
-            <Route path="/serviceDetails/:id">
-              <RoomDetails></RoomDetails>
+            {/* booking */}
+            <Route path="/booking">
+              <Booking></Booking>
             </Route>
             {/* add new service */}
             <Route path="/addnew">
@@ -72,6 +73,14 @@ function App() {
               <Booking></Booking>
             </PrivateRoute> */}
             {/* notfound */}
+            {/* dashboard */}
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
+            </Route>
+            {/* room details */}
+            <Route path="/serviceDetails/:id">
+              <RoomDetails></RoomDetails>
+            </Route>
             <Route exact path="*">
               <NotFound></NotFound>
             </Route>

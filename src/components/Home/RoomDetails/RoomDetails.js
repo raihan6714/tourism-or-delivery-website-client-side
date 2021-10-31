@@ -2,11 +2,14 @@ import { React, useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import './RoomDetails.css';
 import { useForm } from "react-hook-form";
+import axios from 'axios';
+import './RoomDetails.css';
 
 const RoomDetails = () => {
     const { id } = useParams();
     const [data, setData] = useState([]);
 
+    //load single data
     useEffect(() => {
         fetch('https://aqueous-cliffs-30847.herokuapp.com/services')
             .then(res => res.json())
@@ -17,8 +20,18 @@ const RoomDetails = () => {
     }, []);
     const selectItem = data.filter(dt => dt._id === id);
 
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, reset } = useForm();
+
+    //booking
+    const onSubmit = data => {
+        axios.post('http://localhost:5000/addOrders', data)
+            .then(res => {
+                if (res.data.insertedId) {
+                    alert('successfully data added');
+                    reset();
+                }
+            })
+    };
     return (
         <>
             <div className="container py-4">
@@ -31,10 +44,11 @@ const RoomDetails = () => {
                         <h2>{selectItem[0]?.name}</h2>
                         <h4>${selectItem[0]?.price} / NIGHT</h4>
                         <p>{selectItem[0]?.desc}</p>
-                        <div>
+                        <div className="details-form ">
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <input {...register("name")} placeholder="name" />
                                 <input {...register("email", { required: true })} placeholder="email" />
+                                <input {...register("phone", { required: true })} placeholder="number" />
                                 <br />
                                 <input className="btn btn-outline-warning" type="submit" value="BOOK NOW" />
                             </form>

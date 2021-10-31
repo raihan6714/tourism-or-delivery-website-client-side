@@ -25,7 +25,7 @@ const Login = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6 border">
-                        <div className="text-center d-flex flex-column w-50 mx-auto">
+                        <div className="text-center d-flex flex-column w-50 mx-auto my-auto">
                             <button onClick={SignInWithGoogle} className="btn btn-success my-4"><i className="fab fa-google"></i> LOGIN WITH GOOGLE</button>
                             <button className="btn btn-warning mb-4"><i className="fab fa-github"></i> LOGIN WITH GIT HUB</button>
                             <button className="btn btn-primary"><i className="fab fa-facebook"></i> LOGIN WITH FACEBOOK</button>
@@ -34,7 +34,7 @@ const Login = () => {
                     </div>
                     <div className="col-lg-6">
                         <div className="text-center">
-                            <img className="img-fluid" src="http://designarc.biz/demos/hilltown/theme/img/room/room-details.jpg" alt="" />
+                            <img className="img-fluid" src="https://i.ibb.co/8zrDtYr/secure-login-concept-illustration-114360-4685-1.jpg" alt="" />
                         </div>
                     </div>
 

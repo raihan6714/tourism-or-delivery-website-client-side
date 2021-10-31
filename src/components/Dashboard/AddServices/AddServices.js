@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import './AddServices.css';
 const AddServices = () => {
     const { register, handleSubmit, reset } = useForm();
+
     const onSubmit = data => {
-        axios.post('http://localhost:5000/services', data)
+        axios.post('https://aqueous-cliffs-30847.herokuapp.com/services', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('successfully data added');

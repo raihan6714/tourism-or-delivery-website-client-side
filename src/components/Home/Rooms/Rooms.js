@@ -29,7 +29,7 @@ const Rooms = () => {
                         <h6>CHOOSE ROOM ACCORDING TO BUDGET</h6>
                     </div>
                     <div className="col-lg-2">
-                        <button className="btn btn-outline-warning">View All Rooms</button>
+
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@ const News = () => {
                                 <div className="col-sm-6">
                                     <div className="l_news_item">
                                         <Link to="/blog" className="news_img">
-                                            <img src="http://designarc.biz/demos/hilltown/theme/img/blog/latest-news/l-news-1.jpg" alt="" />
+                                            <img src="https://i.ibb.co/870f6Nr/l-news-2.jpg" alt="" />
                                         </Link>
                                         <div className="news_text">
                                             <Link className="l_date" to="/">26 Aug 2017</Link>
@@ -28,7 +28,7 @@ const News = () => {
                                 <div className="col-sm-6">
                                     <div className="l_news_item">
                                         <Link to="/" className="news_img">
-                                            <img src="http://designarc.biz/demos/hilltown/theme/img/blog/latest-news/l-news-2.jpg" alt="" />
+                                            <img src="https://i.ibb.co/JyLXQ2x/l-news-1.jpg" alt="" />
                                         </Link>
                                         <div className="news_text">
                                             <Link className="l_date" to="/">26 Aug 2017</Link>

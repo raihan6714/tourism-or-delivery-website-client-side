@@ -10,7 +10,7 @@ const Footer = () => {
                     <div className="row">
                         <div className="col-md-3 col-xs-6">
                             <aside className="f_widget about_widget">
-                                <img src="http://designarc.biz/demos/hilltown/theme/img/footer-logo.png" alt="" />
+                                <img src="https://i.ibb.co/v3NmKHr/logo-1.png" alt="" />
                                 <div className="ab_wd_list">
                                     <div className="f-media">
                                         <div className="f-media-left">
