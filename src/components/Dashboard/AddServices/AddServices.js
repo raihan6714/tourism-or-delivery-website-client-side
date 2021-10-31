@@ -1,10 +1,19 @@
 import React from 'react';
+import axios from 'axios';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import './AddServices.css';
 const AddServices = () => {
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+        axios.post('http://localhost:5000/services', data)
+            .then(res => {
+                if (res.data.insertedId) {
+                    alert('successfully data added');
+                    reset();
+                }
+            })
+    };
     return (
         <div>
             <div className="container">
@@ -29,10 +38,10 @@ const AddServices = () => {
                     <div className="col-5 add-register">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input {...register("name")} placeholder="name" />
-                            <input  {...register("email", { required: true })} placeholder="email" />
-                            <input {...register("date")} placeholder="date" />
-                            <input {...register("text")} placeholder="organize book at the libary" />
-                            <textarea {...register("desicription")} placeholder="desicription" />
+                            <input  {...register("title", { required: true })} placeholder="title" />
+                            <input {...register("img")} placeholder="img url" />
+                            <input {...register("price")} placeholder="price" />
+                            <textarea {...register("desc")} placeholder="desicription" />
                             <input type="submit" />
                         </form>
                     </div>

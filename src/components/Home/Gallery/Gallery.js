@@ -35,22 +35,22 @@ const Gallery = () => {
                     <Carousel responsive={responsive}>
                         <div className="col">
                             <div className="card h-100">
-                                <img src="http://designarc.biz/demos/hilltown/theme/img/gallery/resort-g-4.jpg" className="card-img-top" alt="..." height="300" />
+                                <img src="https://i.ibb.co/jzcRjbZ/resort-g-2.jpg" className="card-img-top" alt="..." height="300" />
                             </div>
                         </div>
                         <div className="col">
                             <div className="card h-100">
-                                <img src="http://designarc.biz/demos/hilltown/theme/img/gallery/resort-g-2.jpg" className="card-img-top" alt="..." height="300" />
+                                <img src="https://i.ibb.co/x87yQDB/resort-g-4.jpg" className="card-img-top" alt="..." height="300" />
                             </div>
                         </div>
                         <div className="col">
                             <div className="card h-100">
-                                <img src="http://designarc.biz/demos/hilltown/theme/img/gallery/resort-g-3.jpg" className="card-img-top" alt="..." height="300" />
+                                <img src="https://i.ibb.co/Bg7t4tn/resort-g-1.jpg" className="card-img-top" alt="..." height="300" />
                             </div>
                         </div>
                         <div className="col">
                             <div className="card h-100">
-                                <img src="http://designarc.biz/demos/hilltown/theme/img/gallery/resort-g-1.jpg" className="card-img-top" alt="..." height="300" />
+                                <img src="https://i.ibb.co/WvVnZsD/resort-g-3.jpg" className="card-img-top" alt="..." height="300" />
                             </div>
                         </div>
                         <div className="col">

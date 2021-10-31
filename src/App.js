@@ -18,6 +18,8 @@ import Dashboard from './components/Dashboard/Dashboard';
 import AddServices from './components/Dashboard/AddServices/AddServices';
 import ManageOrders from './components/Dashboard/ManageOrders/ManageOrders';
 import MyOrders from './components/Dashboard/MyOrders/MyOrders';
+import AboutUs from './components/Home/AboutUs/AboutUs';
+import ContuctUs from './components/Home/ContuctUs/ContuctUs';
 
 function App() {
   return (
@@ -33,6 +35,14 @@ function App() {
             </Route>
             <Route path="/home">
               <Home></Home>
+            </Route>
+            {/* about */}
+            <Route path="/aboutus">
+              <AboutUs></AboutUs>
+            </Route>
+            {/* contuct */}
+            <Route path="/contact">
+              <ContuctUs></ContuctUs>
             </Route>
             {/* login */}
             <Route path="/login">

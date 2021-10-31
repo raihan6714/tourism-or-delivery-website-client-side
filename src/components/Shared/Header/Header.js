@@ -26,10 +26,10 @@ const Header = () => {
                         <Nav className="me-auto">
                             <NavLink className="me-2 text-decoration-none" to="/home">HOME</NavLink>
                             <NavLink className="me-2 text-decoration-none" to="/services">SERVICES</NavLink>
-                            <NavLink className="me-2 text-decoration-none" to="/about">ABOUT US</NavLink>
+                            <NavLink className="me-2 text-decoration-none" to="/aboutus">ABOUT US</NavLink>
                             <NavLink className="me-2 text-decoration-none" to="/contact">CONTACT US</NavLink>
                             {
-                                users.email ? <NavLink className="me-2 text-decoration-none" to="/dashboard">DASHBOARD</NavLink>
+                                users.email ? <NavLink className="me-2 text-decoration-none" to="/addnew">DASHBOARD</NavLink>
                                     :
                                     <div></div>
                             }

@@ -8,7 +8,7 @@ const Rooms = () => {
     const { isLoading } = useAuth();
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://aqueous-cliffs-30847.herokuapp.com/services')
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
@@ -29,7 +29,7 @@ const Rooms = () => {
                         <h6>CHOOSE ROOM ACCORDING TO BUDGET</h6>
                     </div>
                     <div className="col-lg-2">
-                        <button>View All Rooms</button>
+                        <button className="btn btn-outline-warning">View All Rooms</button>
                     </div>
                 </div>
             </div>

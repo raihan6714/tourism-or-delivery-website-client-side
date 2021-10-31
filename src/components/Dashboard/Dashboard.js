@@ -28,9 +28,8 @@ const Dashboard = () => {
                     <div className="col-5 add-register">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input {...register("name")} placeholder="name" />
-                            <input  {...register("email", { required: true })} placeholder="email" />
-                            <input {...register("date")} placeholder="date" />
-                            <input {...register("text")} placeholder="organize book at the libary" />
+                            <input  {...register("title", { required: true })} placeholder="title" />
+                            <input {...register("img")} placeholder="img url" />
                             <textarea {...register("desicription")} placeholder="desicription" />
                             <input type="submit" />
                         </form>

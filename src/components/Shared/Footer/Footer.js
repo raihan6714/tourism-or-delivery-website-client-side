@@ -40,7 +40,7 @@ const Footer = () => {
                                     <h3>Extra Links</h3>
                                 </div>
                                 <ul>
-                                    <li><Link to="/">About Us</Link></li>
+                                    <li><Link to="/aboutus">About Us</Link></li>
                                     <li><Link to="/">Faq’s</Link></li>
                                     <li><Link to="/">Blog</Link></li>
                                     <li><Link to="/">Testimonials</Link></li>
@@ -79,7 +79,7 @@ const Footer = () => {
                         <h4>Copyright © HillTown Resort  <script>document.write(new Date().getFullYear());</script>. All rights reserved. </h4>
                     </div>
                     <div className="pull-right">
-                        <h4>Created by: <Link to="/">DesignArc</Link></h4>
+                        <h4>Created by: <Link to="/">Raihan</Link></h4>
                     </div>
                 </div>
             </div>
