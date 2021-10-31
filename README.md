@@ -18,3 +18,10 @@ https://react-hilltown-resort6714.web.app/
 * hover uses card ,icon and navbar.
 * all data load form heruku live hosting
 * if youn want you will add a services
+* you will see manage orders ,you can delete (please delete arter refresh)
+* iam trying to best  and i will add new something in future.
+* you can booking a room
+
+## Private Route and other future
+* all services .
+* Dashboard have 3 parts (add new services,manage booking order and delete manage order)

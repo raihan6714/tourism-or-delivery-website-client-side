@@ -16,7 +16,7 @@ const NotFound = () => {
                             </h3>
                             <p>the page you are looking for not avaible!</p>
                             <button className="button">
-                                <Link href="" className="">Home</Link>
+                                <Link to="/" className="">Home</Link>
                             </button>
                         </div>
                     </div>

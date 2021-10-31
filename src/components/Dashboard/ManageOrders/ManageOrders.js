@@ -1,7 +1,24 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import useAuth from '../../../hooks/useAuth';
+import { Spinner, Table } from 'react-bootstrap';
+import AllOrder from './AllOrder/AllOrder';
 const ManageOrders = () => {
+    const { isLoading } = useAuth();
+    const [orders, setOrders] = useState([]);
+    useEffect(() => {
+        fetch('https://aqueous-cliffs-30847.herokuapp.com/manageOrders')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setOrders(data)
+            });
+    }, [])
+    if (isLoading) {
+        return <div className="text-center">
+            <Spinner animation="border" variant="warning" />
+        </div>
+    };
     return (
         <div>
             <div className="container">
@@ -25,31 +42,27 @@ const ManageOrders = () => {
 
                     <div className="col"></div>
                     <div className="col-12 add-register">
-                        <table className="table table-striped table-hover">
-                            <table className="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <tr>
-                                            <td>
-                                                <button className="btn btn-warning me-4">Edit</button>
-                                                <button className="btn btn-danger">Deete</button>
-                                            </td>
-                                        </tr>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </table>
+                        <Table striped bordered hover size="sm">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    orders.map(order => <AllOrder
+                                        key={order._id}
+                                        order={order}
+                                    ></AllOrder>)
+                                }
+                            </tbody>
+                        </Table>
+
+
+
                     </div>
                     <div className="col"></div>
                 </div>
