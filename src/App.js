@@ -21,6 +21,7 @@ import MyOrders from './components/Dashboard/MyOrders/MyOrders';
 import AboutUs from './components/Home/AboutUs/AboutUs';
 import ContuctUs from './components/Home/ContuctUs/ContuctUs';
 import AllServices from './components/Home/AllServices/AllServices';
+import PrivateRoute from './components/Shared/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -37,50 +38,58 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+
             {/* about */}
             <Route path="/aboutus">
               <AboutUs></AboutUs>
             </Route>
+
             {/* contuct */}
             <Route path="/contact">
               <ContuctUs></ContuctUs>
             </Route>
+
             {/* all services */}
-            <Route path="/allServices">
+            <PrivateRoute path="/allServices">
               <AllServices></AllServices>
-            </Route>
+            </PrivateRoute>
+
             {/* login */}
             <Route path="/login">
               <Login></Login>
             </Route>
+
             {/* booking */}
             <Route path="/booking">
               <Booking></Booking>
             </Route>
+
             {/* add new service */}
             <Route path="/addnew">
               <AddServices></AddServices>
             </Route>
+
             {/* mnage order */}
             <Route path="/mnageorder">
               <ManageOrders></ManageOrders>
             </Route>
+
             {/* my order */}
             <Route path="/myorder">
               <MyOrders></MyOrders>
             </Route>
-            {/* <PrivateRoute to="/booking/:id">
-              <Booking></Booking>
-            </PrivateRoute> */}
-            {/* notfound */}
+
             {/* dashboard */}
             <Route path="/dashboard">
               <Dashboard></Dashboard>
             </Route>
+
             {/* room details */}
-            <Route path="/serviceDetails/:id">
+            <PrivateRoute path="/serviceDetails/:id">
               <RoomDetails></RoomDetails>
-            </Route>
+            </PrivateRoute>
+
+            {/* notfound */}
             <Route exact path="*">
               <NotFound></NotFound>
             </Route>

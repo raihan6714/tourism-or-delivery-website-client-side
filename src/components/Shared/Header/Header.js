@@ -43,7 +43,7 @@ const Header = () => {
                                     : <div></div>
                             }
                             {
-                                users.email ? <Link to="/login">
+                                users.email ? <Link to="/">
                                     <Button onClick={logOut} className="btn btn-danger">Logout</Button>
                                 </Link> : <Link to="/login">
                                     <Button className="btn btn-warning">Login</Button>

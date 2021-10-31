@@ -24,7 +24,7 @@ const RoomDetails = () => {
 
     //booking
     const onSubmit = data => {
-        axios.post('http://localhost:5000/addOrders', data)
+        axios.post('https://aqueous-cliffs-30847.herokuapp.com/addOrders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('successfully data added');

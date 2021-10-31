@@ -2,8 +2,20 @@ import React from 'react';
 import useAuth from '../../../hooks/useAuth';
 import './Login.css';
 import { Spinner } from 'react-bootstrap';
+import { useHistory, useLocation } from 'react-router';
 const Login = () => {
     const { SignInWithGoogle, isLoading } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.form || '/allServices';
+    const redirect_urii = location.state?.form || '/allServices';
+    const handleGoogleSignIn = () => {
+        SignInWithGoogle()
+            .then(result => {
+                history.push(redirect_uri);
+                history.push(redirect_urii);
+            })
+    }
     if (isLoading) {
         return <div className="text-center">
             <Spinner animation="border" variant="warning" />
@@ -26,7 +38,7 @@ const Login = () => {
                 <div className="row">
                     <div className="col-lg-6 border">
                         <div className="text-center d-flex flex-column w-50 mx-auto my-auto">
-                            <button onClick={SignInWithGoogle} className="btn btn-success my-4"><i className="fab fa-google"></i> LOGIN WITH GOOGLE</button>
+                            <button onClick={handleGoogleSignIn} className="btn btn-success my-4"><i className="fab fa-google"></i> LOGIN WITH GOOGLE</button>
                             <button className="btn btn-warning mb-4"><i className="fab fa-github"></i> LOGIN WITH GIT HUB</button>
                             <button className="btn btn-primary"><i className="fab fa-facebook"></i> LOGIN WITH FACEBOOK</button>
                             <button className="btn btn-info my-4"><i className="fab fa-twitter"></i> LOGIN WITH TWITTER</button>
@@ -34,7 +46,7 @@ const Login = () => {
                     </div>
                     <div className="col-lg-6">
                         <div className="text-center">
-                            <img className="img-fluid" src="https://i.ibb.co/8zrDtYr/secure-login-concept-illustration-114360-4685-1.jpg" alt="" />
+                            <img className="img-fluid" src="https://i.ibb.co/v3NmKHr/logo-1.png" alt="" />
                         </div>
                     </div>
 
